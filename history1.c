@@ -1,4 +1,8 @@
 #include "shell.h"
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <stdio.h>
 
 /**
  * get_history_file - this funcion gets the history file
