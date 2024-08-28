@@ -1,4 +1,7 @@
 #include "shell.h"
+#include <sys/wait.h>
+#include <unistd.h>
+#include <stdio.h>
 
 /**
  * hsh -this is the main shell loop
@@ -73,7 +76,7 @@ int find_builtin(info_t *info)
 			built_in_ret = builtintbl[j].func(info);
 			break;
 		}
-		return (built_in_ret);
+	return (built_in_ret);
 }
 
 /**
