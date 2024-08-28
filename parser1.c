@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <sys/stat.h>
+#include <unistd.h>
 
 /**
  * is_cmd - function that determines if a file is an executable command
