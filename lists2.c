@@ -10,9 +10,9 @@ size_t list_len(const list_t *h)
 {
 	size_t j = 0;
 
-	while (i)
+	while (h)
 	{
-		i = i->next;
+		h = h->next;
 		j++;
 	}
 	return (j);
@@ -65,17 +65,17 @@ size_t print_list(const list_t *h)
 {
 	size_t j = 0;
 
-	while (i)
+	while (h)
 	{
-		_puts(convert_number(i->num, 10, 0));
+		_puts(convert_number(h->num, 10, 0));
 		_putchar(':');
 		_putchar(' ');
-		_puts(i->str ? i->str : "(nil)");
+		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
-		i = i->next;
+		h = h->next;
 		j++;
 	}
-	return (i);
+	return (j);
 }
 
 /**
@@ -111,11 +111,11 @@ ssize_t get_node_index(list_t *head, list_t *node)
 {
 	size_t j = 0;
 
-	while (h)
+	while (head)
 	{
-		if (h == node)
+		if (head == node)
 			return (j);
-		h = h->next;
+		head = head->next;
 		j++;
 	}
 	return (-1);
