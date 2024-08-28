@@ -1,4 +1,7 @@
-nclude "shell.h"
+#include "shell.h"
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
 
 /**
  * _memset - a function that fills memory with a constant byte
