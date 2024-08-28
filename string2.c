@@ -57,7 +57,7 @@ void _puts(char *str)
 
 	if (!str)
 		return;
-	while (str[i] != '\0')
+	while (str[j] != '\0')
 	{
 		_putchar(str[j]);
 		j++;
