@@ -38,7 +38,7 @@ int _unsetenv(info_t *info, char *var)
 		if (o && *o == '=')
 		{
 			info->env_changed = delete_node_at_index(&(info->env), b);
-			i = 0;
+			b = 0;
 			node = info->env;
 			continue;
 		}

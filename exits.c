@@ -45,7 +45,7 @@ char *_strncat(char *dest, char *src, int n)
 	e = 0;
 	f = 0;
 	while (dest[e] != '\0')
-		i++;
+		e++;
 	while (src[f] != '\0' && f < n)
 	{
 		dest[e] = src[f];
