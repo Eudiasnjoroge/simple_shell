@@ -66,6 +66,6 @@ int _atoi(char *s)
 			flag = 2;
 	}
 
-	return (sign == -1) ? (int)(-result) : (int)(result);
+	return ((sign == -1) ? (int)(-result) : (int)(result));
 }
 
