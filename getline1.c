@@ -1,4 +1,7 @@
 #include "shell.h"
+#include <signal.h>
+#include <stdio.h>
+#include <unistd.h>
 
 /**
  * input_buf - function that buffers chained commands
@@ -13,8 +16,9 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 	ssize_t t = 0;
 	size_t len_p = 0;
 
-	if (!*len)
+	if (!*len) /* if nothing left in the buffer, fill it */
 	{
+		/* bfree((void **)info->cmd_buf); */
 		free(*buf);
 		*buf = NULL;
 		signal(SIGINT, sigintHandler);
@@ -85,7 +89,7 @@ ssize_t get_input(info_t *info)
 	}
 
 	*buf_p = buf; /* else not a chain, pass back buffer from _getline() */
-	return (r); /* return length of buffer from _getline() */
+	return (t); /* return length of buffer from _getline() */
 }
 
 /**
